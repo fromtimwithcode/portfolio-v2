@@ -2,24 +2,46 @@ import React from 'react'
 import styled from 'styled-components'
 
 function NavBar() {
-    const links = ['link', 'link', 'link']
+    const links = [
+        { id: 1, display: 'github', url: 'https://github.com/fromtimwithcode' },
+        {
+            id: 2,
+            display: 'twitter',
+            url: 'https://twitter.com/timbo_btc',
+        },
+        {
+            id: 3,
+            display: 'linkedin',
+            url: 'https://linkedin.com/in/fromtimwithcode',
+        },
+    ]
     return (
         <Container>
             <Left onClick={() => window.location.reload()}>TIM MARCHANT</Left>
             <Right>
                 {links.map((link) => {
-                    return <StyledLink>{link}</StyledLink>
+                    return (
+                        <StyledLink key={link.id} href={link.url}>
+                            {link.display}
+                        </StyledLink>
+                    )
                 })}
             </Right>
         </Container>
     )
 }
 
-const StyledLink = styled.p`
+const StyledLink = styled.a`
     text-transform: uppercase;
     letter-spacing: 3px;
     font-weight: 600;
+    color: #fff;
+    text-decoration: none;
     padding-left: 20px;
+    &:hover {
+        cursor: pointer;
+        color: #bb86fc;
+    }
 `
 
 const Left = styled.div`
@@ -54,7 +76,7 @@ const Container = styled.div`
     width: 100%;
     font-family: Helvetica;
     color: #fff;
-    padding: 30px 0;
+    padding: 40px 0;
     @media (max-width: 500px) {
         flex-direction: column;
         padding: 0;
