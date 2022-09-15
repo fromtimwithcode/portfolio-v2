@@ -72,6 +72,7 @@ const Second = styled.div`
 `
 
 const Card = styled.div`
+    box-sizing: border-box;
     position: relative;
     width: 500px;
     height: 200px;
@@ -93,6 +94,7 @@ const Card = styled.div`
     }
     @media (max-width: 500px) {
         margin: 5px 20px;
+        width: 370px;
         height: 150px;
     }
     &:hover {
@@ -102,6 +104,8 @@ const Card = styled.div`
 `
 
 const Container = styled.div`
+    box-sizing: border-box;
+    width: 100%;
     max-width: 1400px;
     display: flex;
     flex-flow: row wrap;
