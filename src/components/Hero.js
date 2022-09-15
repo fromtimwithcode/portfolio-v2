@@ -34,6 +34,9 @@ const Header = styled.h1`
         font-size: 2.4rem;
         padding: 0 15px;
     }
+    @media (min-width: 1700px) {
+        text-align: center;
+    }
 `
 
 export default Hero

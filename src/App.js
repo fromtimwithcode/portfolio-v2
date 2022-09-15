@@ -2,12 +2,14 @@ import React from 'react'
 import styled from 'styled-components'
 import NavBar from './components/NavBar'
 import Hero from './components/Hero'
+import Portfolio from './components/Portfolio'
 
 function App() {
     return (
         <Container>
             <NavBar />
             <Hero />
+            <Portfolio />
         </Container>
     )
 }
@@ -18,6 +20,7 @@ const Container = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
 `
 
 export default App
