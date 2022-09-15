@@ -9,7 +9,7 @@ function Portfolio() {
     return (
         <>
             <Container>
-                <Card>
+                <Card href="http://projectindigonft.com">
                     <First
                         style={{
                             backgroundImage: `url(${project_indigo})`,
@@ -17,7 +17,7 @@ function Portfolio() {
                     ></First>
                     <Second>An NFT experience with two game modes</Second>
                 </Card>
-                <Card>
+                <Card href="http://bloxfit.com">
                     <First
                         style={{
                             backgroundImage: `url(${bloxfit})`,
@@ -27,7 +27,7 @@ function Portfolio() {
                 </Card>
             </Container>
             <Container>
-                <Card>
+                <Card href="http://templetrippers.io">
                     <First
                         style={{
                             backgroundImage: `url(${temple_trippers})`,
@@ -35,7 +35,7 @@ function Portfolio() {
                     ></First>
                     <Second>A customizable NFT experience</Second>
                 </Card>
-                <Card>
+                <Card href="http://traintolevelup.com">
                     <First
                         style={{
                             backgroundImage: `url(${train_to_level_up})`,
@@ -71,7 +71,7 @@ const Second = styled.div`
     text-align: center;
 `
 
-const Card = styled.div`
+const Card = styled.a`
     box-sizing: border-box;
     position: relative;
     width: 500px;
