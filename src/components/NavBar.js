@@ -5,7 +5,7 @@ function NavBar() {
     const links = ['link', 'link', 'link']
     return (
         <Container>
-            <Left>TIM MARCHANT</Left>
+            <Left onClick={() => window.location.reload()}>TIM MARCHANT</Left>
             <Right>
                 {links.map((link) => {
                     return <StyledLink>{link}</StyledLink>
