@@ -1,23 +1,78 @@
 import React from 'react'
 import styled from 'styled-components'
+import project_indigo from './../images/project_indigo.png'
+import bloxfit from './../images/bloxfit.jpg'
+import temple_trippers from './../images/temple_trippers.png'
+import train_to_level_up from './../images/train_to_level_up.png'
 
 function Portfolio() {
     return (
         <>
             <Container>
-                <Card>lorem ipsum</Card>
-                <Card>lorem ipsum</Card>
+                <Card>
+                    <First
+                        style={{
+                            backgroundImage: `url(${project_indigo})`,
+                        }}
+                    ></First>
+                    <Second>An NFT experience with two game modes</Second>
+                </Card>
+                <Card>
+                    <First
+                        style={{
+                            backgroundImage: `url(${bloxfit})`,
+                        }}
+                    ></First>
+                    <Second>A social platform with fitness classes</Second>
+                </Card>
             </Container>
             <Container>
-                <Card>lorem ipsum</Card>
-                <Card>lorem ipsum</Card>
+                <Card>
+                    <First
+                        style={{
+                            backgroundImage: `url(${temple_trippers})`,
+                        }}
+                    ></First>
+                    <Second>A customizable NFT experience</Second>
+                </Card>
+                <Card>
+                    <First
+                        style={{
+                            backgroundImage: `url(${train_to_level_up})`,
+                        }}
+                    ></First>
+                    <Second>A fitness web app with learning management</Second>
+                </Card>
             </Container>
         </>
     )
 }
 
+const First = styled.div`
+    opacity: 0.4;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+`
+
+const Second = styled.div`
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Helvetica;
+    font-size: 2rem;
+    text-align: center;
+`
+
 const Card = styled.div`
-    background: #242424;
+    position: relative;
     width: 500px;
     height: 200px;
     margin: 20px 60px;
@@ -26,8 +81,6 @@ const Card = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    background-size: 102%;
-    background-position: 49%;
     box-sizing: border-box;
     border: 3px solid #fff;
     border-radius: 3px;
