@@ -4,7 +4,8 @@ import styled from 'styled-components'
 function Footer() {
     return (
         <Container>
-            from tim <Purple>♥</Purple> with{' '}
+            from <Link href="https://github.com/fromtimwithcode">tim</Link>{' '}
+            <Purple>♥</Purple> with{' '}
             <Link href="https://reactjs.org">react</Link>
         </Container>
     )
