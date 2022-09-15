@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import NavBar from './components/NavBar'
 import Hero from './components/Hero'
 import Portfolio from './components/Portfolio'
+import Footer from './components/Footer'
 
 function App() {
     return (
@@ -10,6 +11,7 @@ function App() {
             <NavBar />
             <Hero />
             <Portfolio />
+            <Footer />
         </Container>
     )
 }
