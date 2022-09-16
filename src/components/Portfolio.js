@@ -6,45 +6,47 @@ import temple_trippers from './../images/temple_trippers.png'
 import train_to_level_up from './../images/train_to_level_up.png'
 
 function Portfolio() {
+    const projects = [
+        {
+            id: 1,
+            url: 'https://projectindigonft.com',
+            image: project_indigo,
+            info: 'An NFT experience with game modes',
+        },
+        {
+            id: 2,
+            url: 'http://bloxfit.com',
+            image: bloxfit,
+            info: 'A social platform with fitness classes',
+        },
+        {
+            id: 3,
+            url: 'http://templetrippers.io',
+            image: temple_trippers,
+            info: 'A customizable NFT experience',
+        },
+        {
+            id: 4,
+            url: 'http://traintolevelup.com',
+            image: train_to_level_up,
+            info: 'A fitness web app with learning management',
+        },
+    ]
     return (
-        <>
-            <Container>
-                <Card href="http://projectindigonft.com">
-                    <First
-                        style={{
-                            backgroundImage: `url(${project_indigo})`,
-                        }}
-                    ></First>
-                    <Second>An NFT experience with two game modes</Second>
-                </Card>
-                <Card href="http://bloxfit.com">
-                    <First
-                        style={{
-                            backgroundImage: `url(${bloxfit})`,
-                        }}
-                    ></First>
-                    <Second>A social platform with fitness classes</Second>
-                </Card>
-            </Container>
-            <Container>
-                <Card href="http://templetrippers.io">
-                    <First
-                        style={{
-                            backgroundImage: `url(${temple_trippers})`,
-                        }}
-                    ></First>
-                    <Second>A customizable NFT experience</Second>
-                </Card>
-                <Card href="http://traintolevelup.com">
-                    <First
-                        style={{
-                            backgroundImage: `url(${train_to_level_up})`,
-                        }}
-                    ></First>
-                    <Second>A fitness web app with learning management</Second>
-                </Card>
-            </Container>
-        </>
+        <Container>
+            {projects.map((project) => {
+                return (
+                    <Card key={project.id} href={project.url} target="_blank">
+                        <First
+                            style={{
+                                backgroundImage: `url(${project.image})`,
+                            }}
+                        ></First>
+                        <Second>{project.info}</Second>
+                    </Card>
+                )
+            })}
+        </Container>
     )
 }
 

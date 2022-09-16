@@ -29,7 +29,7 @@ const Purple = styled.span`
 const Container = styled.div`
     box-sizing: border-box;
     width: 100%;
-    margin-top: 80px;
+    margin: 80px 0;
     padding: 25px 0;
     display: flex;
     justify-content: center;
