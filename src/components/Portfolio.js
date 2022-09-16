@@ -9,7 +9,7 @@ function Portfolio() {
     return (
         <>
             <Container>
-                <Card href="http://projectindigonft.com">
+                <Card href="http://projectindigonft.com" target="_blank">
                     <First
                         style={{
                             backgroundImage: `url(${project_indigo})`,
@@ -17,7 +17,7 @@ function Portfolio() {
                     ></First>
                     <Second>An NFT experience with two game modes</Second>
                 </Card>
-                <Card href="http://bloxfit.com">
+                <Card href="http://bloxfit.com" target="_blank">
                     <First
                         style={{
                             backgroundImage: `url(${bloxfit})`,
@@ -27,7 +27,7 @@ function Portfolio() {
                 </Card>
             </Container>
             <Container>
-                <Card href="http://templetrippers.io">
+                <Card href="http://templetrippers.io" target="_blank">
                     <First
                         style={{
                             backgroundImage: `url(${temple_trippers})`,
@@ -35,7 +35,7 @@ function Portfolio() {
                     ></First>
                     <Second>A customizable NFT experience</Second>
                 </Card>
-                <Card href="http://traintolevelup.com">
+                <Card href="http://traintolevelup.com" target="_blank">
                     <First
                         style={{
                             backgroundImage: `url(${train_to_level_up})`,
