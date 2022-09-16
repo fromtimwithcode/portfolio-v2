@@ -4,8 +4,11 @@ import project_indigo from './../images/project_indigo.png'
 import bloxfit from './../images/bloxfit.jpg'
 import temple_trippers from './../images/temple_trippers.png'
 import train_to_level_up from './../images/train_to_level_up.png'
+import { useDispatch } from 'react-redux'
+import { addPoints } from './../features/points/pointsSlice'
 
 function Portfolio() {
+    const dispatch = useDispatch()
     const projects = [
         {
             id: 1,
@@ -36,7 +39,12 @@ function Portfolio() {
         <Container>
             {projects.map((project) => {
                 return (
-                    <Card key={project.id} href={project.url} target="_blank">
+                    <Card
+                        key={project.id}
+                        href={project.url}
+                        target="_blank"
+                        onClick={() => dispatch(addPoints(5))}
+                    >
                         <First
                             style={{
                                 backgroundImage: `url(${project.image})`,

@@ -1,12 +1,28 @@
 import React from 'react'
 import styled from 'styled-components'
+import { useDispatch } from 'react-redux'
+import { addPoints } from './../features/points/pointsSlice'
 
 function Footer() {
+    const dispatch = useDispatch()
     return (
         <Container>
-            from <Link href="https://github.com/fromtimwithcode">tim</Link>{' '}
+            from{' '}
+            <Link
+                href="https://github.com/fromtimwithcode"
+                target="_blank"
+                onClick={() => dispatch(addPoints(3))}
+            >
+                tim
+            </Link>{' '}
             <Purple>♥</Purple> with{' '}
-            <Link href="https://reactjs.org">react</Link>
+            <Link href="https://reactjs.org" target="_blank">
+                react
+            </Link>{' '}
+            and{' '}
+            <Link href="https://redux.js.org/" target="_blank">
+                redux
+            </Link>
         </Container>
     )
 }
@@ -15,6 +31,7 @@ const Link = styled.a`
     color: #fff;
     text-decoration: none;
     padding-left: 5px;
+    padding-right: 5px;
     &:hover {
         cursor: pointer;
         color: #bb86fc;
@@ -23,7 +40,7 @@ const Link = styled.a`
 
 const Purple = styled.span`
     color: #bb86fc;
-    padding: 0 5px;
+    padding-right: 5px;
 `
 
 const Container = styled.div`
