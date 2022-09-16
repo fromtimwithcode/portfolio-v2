@@ -1,14 +1,16 @@
 import React from 'react'
 import styled from 'styled-components'
-import coin from './../images/coin.png'
+import coin from './../../images/coin.png'
+import { useSelector } from 'react-redux'
 
 function PointsBar() {
+    const points = useSelector((state) => state.points.points)
     return (
         <Container>
             <Bar>
                 <CoinInfo>
                     <StyledCoin src={coin} alt="coin" />
-                    <Paragraph>0 points</Paragraph>
+                    <Paragraph>{points} points</Paragraph>
                 </CoinInfo>
                 <Right>
                     <SpendButton style={{ marginRight: '5px' }}>
