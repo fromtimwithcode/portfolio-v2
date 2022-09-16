@@ -9,7 +9,7 @@ export const pointsSlice = createSlice({
     initialState,
     reducers: {
         addPoints: (state, action) => {
-            state.value += action.payload
+            state.points += action.payload
         },
     },
 })

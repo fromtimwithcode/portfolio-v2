@@ -1,7 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
+import { useDispatch } from 'react-redux'
+import { addPoints } from './../features/points/pointsSlice'
 
 function NavBar() {
+    const dispatch = useDispatch()
     const links = [
         { id: 1, display: 'github', url: 'https://github.com/fromtimwithcode' },
         {
@@ -25,6 +28,7 @@ function NavBar() {
                             key={link.id}
                             href={link.url}
                             target="_blank"
+                            onClick={() => dispatch(addPoints(3))}
                         >
                             {link.display}
                         </StyledLink>
