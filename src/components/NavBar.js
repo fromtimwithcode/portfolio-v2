@@ -21,7 +21,11 @@ function NavBar() {
             <Right>
                 {links.map((link) => {
                     return (
-                        <StyledLink key={link.id} href={link.url}>
+                        <StyledLink
+                            key={link.id}
+                            href={link.url}
+                            target="_blank"
+                        >
                             {link.display}
                         </StyledLink>
                     )
