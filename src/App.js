@@ -4,7 +4,7 @@ import NavBar from './components/NavBar'
 import Hero from './components/Hero'
 import Portfolio from './components/Portfolio'
 import Footer from './components/Footer'
-// import PointsBar from './features/points/PointsBar'
+import CoinsBar from './features/coins/CoinsBar'
 
 function App() {
     return (
@@ -13,8 +13,7 @@ function App() {
             <Hero />
             <Portfolio />
             <Footer />
-            {/* hide points bar until gamification complete */}
-            {/* <PointsBar /> */}
+            <CoinsBar />
         </Container>
     )
 }

@@ -3,14 +3,14 @@ import styled from 'styled-components'
 import coin from './../../images/coin.png'
 import { useSelector } from 'react-redux'
 
-function PointsBar() {
-    const points = useSelector((state) => state.points.points)
+function CoinsBar() {
+    const coins = useSelector((state) => state.coins.coins)
     return (
         <Container>
             <Bar>
                 <CoinInfo>
                     <StyledCoin src={coin} alt="coin" />
-                    <Paragraph>{points} points</Paragraph>
+                    <Paragraph>{coins} coins</Paragraph>
                 </CoinInfo>
                 <Right>
                     <SpendButton style={{ marginRight: '5px' }}>
@@ -100,4 +100,4 @@ const Container = styled.div`
     }
 `
 
-export default PointsBar
+export default CoinsBar

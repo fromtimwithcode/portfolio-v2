@@ -5,7 +5,7 @@ import bloxfit from './../images/bloxfit.jpg'
 import temple_trippers from './../images/temple_trippers.png'
 import train_to_level_up from './../images/train_to_level_up.png'
 import { useDispatch } from 'react-redux'
-import { addPoints } from './../features/points/pointsSlice'
+import { addCoins } from '../features/coins/coinsSlice'
 
 function Portfolio() {
     const dispatch = useDispatch()
@@ -43,7 +43,7 @@ function Portfolio() {
                         key={project.id}
                         href={project.url}
                         target="_blank"
-                        onClick={() => dispatch(addPoints(5))}
+                        onClick={() => dispatch(addCoins(5))}
                     >
                         <First
                             style={{
