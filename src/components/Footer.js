@@ -11,7 +11,7 @@ function Footer() {
             <Link
                 href="https://github.com/fromtimwithcode"
                 target="_blank"
-                onClick={() => dispatch(addCoins(3))}
+                onClick={() => dispatch(addCoins(22))}
             >
                 tim
             </Link>{' '}
