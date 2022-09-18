@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import project_indigo from './../images/project_indigo.png'
 import bloxfit from './../images/bloxfit.jpg'
@@ -10,41 +10,56 @@ import coin from './../images/coin.png'
 
 function Portfolio() {
     const dispatch = useDispatch()
-    const projects = [
+    const [projects, setProjects] = useState([
         {
             id: 1,
             url: 'https://projectindigonft.com',
             image: project_indigo,
             info: 'An NFT experience with two game modes',
+            earned: false,
         },
         {
             id: 2,
             url: 'http://bloxfit.com',
             image: bloxfit,
             info: 'A social platform with fitness classes',
+            earned: false,
         },
         {
             id: 3,
             url: 'http://templetrippers.io',
             image: temple_trippers,
             info: 'A customizable NFT experience',
+            earned: false,
         },
         {
             id: 4,
             url: 'http://traintolevelup.com',
             image: train_to_level_up,
             info: 'A fitness web app with learning management',
+            earned: false,
         },
-    ]
+    ])
+    const handleEarnedCoins = (id) => {
+        if (!projects[id - 1].earned) {
+            dispatch(addCoins(5))
+            setProjects((prevState) => {
+                let stateCopy = [...prevState]
+                const index = stateCopy.findIndex((obj) => obj.id === id)
+                stateCopy[index] = { ...stateCopy[index], earned: true }
+                return stateCopy
+            })
+        }
+    }
     return (
         <Container>
-            {projects.map((project) => {
+            {projects.map((project, index) => {
                 return (
                     <Card
-                        key={project.id}
+                        key={index}
                         href={project.url}
                         target="_blank"
-                        onClick={() => dispatch(addCoins(5))}
+                        onClick={() => handleEarnedCoins(project.id)}
                     >
                         <First
                             style={{
