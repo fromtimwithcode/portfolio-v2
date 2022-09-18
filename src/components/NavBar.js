@@ -1,23 +1,39 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import { useDispatch } from 'react-redux'
 import { addCoins } from '../features/coins/coinsSlice'
 
 function NavBar() {
     const dispatch = useDispatch()
-    const links = [
-        { id: 1, display: 'github', url: 'https://github.com/fromtimwithcode' },
+    const [links, setLinks] = useState([
+        {
+            id: 1,
+            display: 'github',
+            url: 'https://github.com/fromtimwithcode',
+            earned: false,
+        },
         {
             id: 2,
             display: 'twitter',
             url: 'https://twitter.com/timbo_btc',
+            earned: false,
         },
         {
             id: 3,
             display: 'linkedin',
             url: 'https://linkedin.com/in/fromtimwithcode',
+            earned: false,
         },
-    ]
+    ])
+    const handleEarnedCoins = (id) => {
+        dispatch(addCoins(3))
+        setLinks((prevState) => {
+            let stateCopy = [...prevState]
+            const index = stateCopy.findIndex((obj) => obj.id === id)
+            stateCopy[index] = { ...stateCopy[index], earned: true }
+            return stateCopy
+        })
+    }
     return (
         <Container>
             <Left onClick={() => window.location.reload()}>TIM MARCHANT</Left>
@@ -28,7 +44,11 @@ function NavBar() {
                             key={link.id}
                             href={link.url}
                             target="_blank"
-                            onClick={() => dispatch(addCoins(3))}
+                            onClick={
+                                link.earned
+                                    ? null
+                                    : () => handleEarnedCoins(link.id)
+                            }
                         >
                             {link.display}
                         </StyledLink>
