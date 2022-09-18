@@ -6,6 +6,7 @@ import temple_trippers from './../images/temple_trippers.png'
 import train_to_level_up from './../images/train_to_level_up.png'
 import { useDispatch } from 'react-redux'
 import { addCoins } from '../features/coins/coinsSlice'
+import { showEarnedCoinsInfo } from '../features/popups/popupsSlice'
 import coin from './../images/coin.png'
 
 function Portfolio() {
@@ -42,6 +43,7 @@ function Portfolio() {
     ])
     const handleEarnedCoins = (id) => {
         dispatch(addCoins(5))
+        dispatch(showEarnedCoinsInfo())
         setProjects((prevState) => {
             let stateCopy = [...prevState]
             const index = stateCopy.findIndex((obj) => obj.id === id)

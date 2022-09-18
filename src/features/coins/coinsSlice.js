@@ -2,6 +2,7 @@ import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
     coins: 0,
+    lastEarned: 0,
 }
 
 export const coinsSlice = createSlice({
@@ -10,6 +11,7 @@ export const coinsSlice = createSlice({
     reducers: {
         addCoins: (state, action) => {
             state.coins += action.payload
+            state.lastEarned = action.payload
         },
     },
 })
