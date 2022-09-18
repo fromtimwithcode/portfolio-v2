@@ -41,15 +41,13 @@ function Portfolio() {
         },
     ])
     const handleEarnedCoins = (id) => {
-        if (!projects[id - 1].earned) {
-            dispatch(addCoins(5))
-            setProjects((prevState) => {
-                let stateCopy = [...prevState]
-                const index = stateCopy.findIndex((obj) => obj.id === id)
-                stateCopy[index] = { ...stateCopy[index], earned: true }
-                return stateCopy
-            })
-        }
+        dispatch(addCoins(5))
+        setProjects((prevState) => {
+            let stateCopy = [...prevState]
+            const index = stateCopy.findIndex((obj) => obj.id === id)
+            stateCopy[index] = { ...stateCopy[index], earned: true }
+            return stateCopy
+        })
     }
     return (
         <Container>
@@ -59,7 +57,11 @@ function Portfolio() {
                         key={index}
                         href={project.url}
                         target="_blank"
-                        onClick={() => handleEarnedCoins(project.id)}
+                        onClick={
+                            project.earned
+                                ? null
+                                : () => handleEarnedCoins(project.id)
+                        }
                     >
                         <First
                             style={{
