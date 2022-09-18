@@ -5,8 +5,13 @@ import Hero from './components/Hero'
 import Portfolio from './components/Portfolio'
 import Footer from './components/Footer'
 import CoinsBar from './features/coins/CoinsBar'
+import EarnedCoinsPopup from './features/popups/EarnedCoinsPopup'
+import { useSelector } from 'react-redux'
 
 function App() {
+    const showEarnedCoinsPopUp = useSelector(
+        (state) => state.popups.earnedCoinsInfo
+    )
     return (
         <Container>
             <NavBar />
@@ -14,6 +19,7 @@ function App() {
             <Portfolio />
             <Footer />
             <CoinsBar />
+            {showEarnedCoinsPopUp && <EarnedCoinsPopup />}
         </Container>
     )
 }
