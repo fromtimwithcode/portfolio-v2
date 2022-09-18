@@ -38,9 +38,6 @@ const Button = styled.div`
     letter-spacing: 1px;
     color: #000;
     background-color: #fff;
-    // @media (max-width: 768px) {
-    //     margin-top: 2px;
-    // }
     &:hover {
         cursor: pointer;
         color: #bb86fc;
