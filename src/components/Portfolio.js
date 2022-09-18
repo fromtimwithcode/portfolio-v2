@@ -69,10 +69,12 @@ function Portfolio() {
                             }}
                         ></First>
                         <Second>{project.info}</Second>
-                        <EarnInfo>
-                            <StyledCoin src={coin} alt="coin" />
-                            <EarnInfoText>5</EarnInfoText>
-                        </EarnInfo>
+                        {project.earned ? null : (
+                            <EarnInfo>
+                                <StyledCoin src={coin} alt="coin" />
+                                <EarnInfoText>5</EarnInfoText>
+                            </EarnInfo>
+                        )}
                     </Card>
                 )
             })}
