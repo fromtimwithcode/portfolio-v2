@@ -6,6 +6,7 @@ import temple_trippers from './../images/temple_trippers.png'
 import train_to_level_up from './../images/train_to_level_up.png'
 import { useDispatch } from 'react-redux'
 import { addCoins } from '../features/coins/coinsSlice'
+import coin from './../images/coin.png'
 
 function Portfolio() {
     const dispatch = useDispatch()
@@ -14,7 +15,7 @@ function Portfolio() {
             id: 1,
             url: 'https://projectindigonft.com',
             image: project_indigo,
-            info: 'An NFT experience with game modes',
+            info: 'An NFT experience with two game modes',
         },
         {
             id: 2,
@@ -51,12 +52,37 @@ function Portfolio() {
                             }}
                         ></First>
                         <Second>{project.info}</Second>
+                        <EarnInfo>
+                            <StyledCoin src={coin} alt="coin" />
+                            <EarnInfoText>5</EarnInfoText>
+                        </EarnInfo>
                     </Card>
                 )
             })}
         </Container>
     )
 }
+
+const EarnInfoText = styled.p`
+    margin: 0;
+    font-size: 16px;
+    margin-top: 1px;
+`
+
+const StyledCoin = styled.img`
+    width: 16px;
+    margin-right: 3px;
+    margin-top: 0.5px;
+`
+
+const EarnInfo = styled.div`
+position absolute;
+bottom: 0;
+right: 3px;
+display: flex;
+justify-content: flex-end;
+align-items: center;
+`
 
 const First = styled.div`
     opacity: 0.4;
@@ -76,7 +102,6 @@ const Second = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: Helvetica;
     font-size: 2rem;
     text-align: center;
 `
@@ -121,6 +146,7 @@ const Container = styled.div`
     flex-flow: row wrap;
     justify-content: center;
     align-items: center;
+    font-family: Helvetica;
 `
 
 export default Portfolio
