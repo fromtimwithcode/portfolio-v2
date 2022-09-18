@@ -1,17 +1,22 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import { useDispatch } from 'react-redux'
 import { addCoins } from '../features/coins/coinsSlice'
 
 function Footer() {
     const dispatch = useDispatch()
+    const [earned, setEarned] = useState(false)
+    const handleEarnedCoins = () => {
+        dispatch(addCoins(22))
+        setEarned(true)
+    }
     return (
         <Container>
             from{' '}
             <Link
                 href="https://github.com/fromtimwithcode"
                 target="_blank"
-                onClick={() => dispatch(addCoins(22))}
+                onClick={earned ? null : () => handleEarnedCoins()}
             >
                 tim
             </Link>{' '}
