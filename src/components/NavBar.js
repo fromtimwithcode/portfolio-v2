@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 import { useDispatch } from 'react-redux'
 import { addCoins } from '../features/coins/coinsSlice'
+import { showEarnedCoinsInfo } from '../features/popups/popupsSlice'
 
 function NavBar() {
     const dispatch = useDispatch()
@@ -27,6 +28,7 @@ function NavBar() {
     ])
     const handleEarnedCoins = (id) => {
         dispatch(addCoins(3))
+        dispatch(showEarnedCoinsInfo())
         setLinks((prevState) => {
             let stateCopy = [...prevState]
             const index = stateCopy.findIndex((obj) => obj.id === id)

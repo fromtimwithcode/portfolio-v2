@@ -2,12 +2,14 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 import { useDispatch } from 'react-redux'
 import { addCoins } from '../features/coins/coinsSlice'
+import { showEarnedCoinsInfo } from '../features/popups/popupsSlice'
 
 function Footer() {
     const dispatch = useDispatch()
     const [earned, setEarned] = useState(false)
     const handleEarnedCoins = () => {
         dispatch(addCoins(22))
+        dispatch(showEarnedCoinsInfo())
         setEarned(true)
     }
     return (
