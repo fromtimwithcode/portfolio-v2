@@ -1,10 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
-import { useDispatch } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import { showEarnedCoinsInfo } from './popupsSlice'
 import coin_stack from './../../images/coin_stack.png'
 
 function EarnedCoinsPopup() {
+    const coinsEarned = useSelector((state) => state.coins.lastEarned)
     const dispatch = useDispatch()
     return (
         <EarnedCoinsModal>
@@ -13,7 +14,7 @@ function EarnedCoinsPopup() {
                     <StyledCoinStack src={coin_stack} alt="coin stack" />
                 </Left>
                 <Right>
-                    <Header>You earned 5 coins!</Header>
+                    <Header>You earned {coinsEarned} coins!</Header>
                     <Button onClick={() => dispatch(showEarnedCoinsInfo())}>
                         awesome!
                     </Button>
