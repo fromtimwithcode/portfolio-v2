@@ -1,49 +1,67 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import project_indigo from './../images/project_indigo.png'
 import bloxfit from './../images/bloxfit.jpg'
 import temple_trippers from './../images/temple_trippers.png'
 import train_to_level_up from './../images/train_to_level_up.png'
 import { useDispatch } from 'react-redux'
-import { addPoints } from './../features/points/pointsSlice'
+import { addCoins } from '../features/coins/coinsSlice'
+import coin from './../images/coin.png'
 
 function Portfolio() {
     const dispatch = useDispatch()
-    const projects = [
+    const [projects, setProjects] = useState([
         {
             id: 1,
             url: 'https://projectindigonft.com',
             image: project_indigo,
-            info: 'An NFT experience with game modes',
+            info: 'An NFT experience with two game modes',
+            earned: false,
         },
         {
             id: 2,
             url: 'http://bloxfit.com',
             image: bloxfit,
             info: 'A social platform with fitness classes',
+            earned: false,
         },
         {
             id: 3,
             url: 'http://templetrippers.io',
             image: temple_trippers,
             info: 'A customizable NFT experience',
+            earned: false,
         },
         {
             id: 4,
             url: 'http://traintolevelup.com',
             image: train_to_level_up,
             info: 'A fitness web app with learning management',
+            earned: false,
         },
-    ]
+    ])
+    const handleEarnedCoins = (id) => {
+        dispatch(addCoins(5))
+        setProjects((prevState) => {
+            let stateCopy = [...prevState]
+            const index = stateCopy.findIndex((obj) => obj.id === id)
+            stateCopy[index] = { ...stateCopy[index], earned: true }
+            return stateCopy
+        })
+    }
     return (
         <Container>
-            {projects.map((project) => {
+            {projects.map((project, index) => {
                 return (
                     <Card
-                        key={project.id}
+                        key={index}
                         href={project.url}
                         target="_blank"
-                        onClick={() => dispatch(addPoints(5))}
+                        onClick={
+                            project.earned
+                                ? null
+                                : () => handleEarnedCoins(project.id)
+                        }
                     >
                         <First
                             style={{
@@ -51,12 +69,39 @@ function Portfolio() {
                             }}
                         ></First>
                         <Second>{project.info}</Second>
+                        {project.earned ? null : (
+                            <EarnInfo>
+                                <StyledCoin src={coin} alt="coin" />
+                                <EarnInfoText>5</EarnInfoText>
+                            </EarnInfo>
+                        )}
                     </Card>
                 )
             })}
         </Container>
     )
 }
+
+const EarnInfoText = styled.p`
+    margin: 0;
+    font-size: 16px;
+    margin-top: 1px;
+`
+
+const StyledCoin = styled.img`
+    width: 16px;
+    margin-right: 3px;
+    margin-top: 0.5px;
+`
+
+const EarnInfo = styled.div`
+position absolute;
+bottom: 0;
+right: 3px;
+display: flex;
+justify-content: flex-end;
+align-items: center;
+`
 
 const First = styled.div`
     opacity: 0.4;
@@ -76,7 +121,6 @@ const Second = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: Helvetica;
     font-size: 2rem;
     text-align: center;
 `
@@ -121,6 +165,7 @@ const Container = styled.div`
     flex-flow: row wrap;
     justify-content: center;
     align-items: center;
+    font-family: Helvetica;
 `
 
 export default Portfolio

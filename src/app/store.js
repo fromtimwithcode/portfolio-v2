@@ -1,6 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit'
-import pointsReducer from './../features/points/pointsSlice'
+import coinsReducer from '../features/coins/coinsSlice'
 
 export const store = configureStore({
-    reducer: { points: pointsReducer },
+    reducer: { coins: coinsReducer },
 })
