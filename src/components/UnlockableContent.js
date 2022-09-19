@@ -18,7 +18,7 @@ function UnlockableContent() {
         dispatch(subtractCoins(cost))
     }
     return (
-        <Container>
+        <Container id="unlockable-content">
             <UnlockableContentContainer>
                 <StyledLegend>Unlockable content</StyledLegend>
                 {items.map((item, index) => {
