@@ -7,8 +7,8 @@ import coin_stack from './../../images/coin_stack.png'
 function NotEnoughCoinsPopup() {
     const dispatch = useDispatch()
     return (
-        <EarnedCoinsModal>
-            <EarnedCoinsContainer>
+        <NotEnoughCoinsModal>
+            <NotEnoughCoinsContainer>
                 <Left>
                     <StyledCoinStack src={coin_stack} alt="coin stack" />
                 </Left>
@@ -18,8 +18,8 @@ function NotEnoughCoinsPopup() {
                         ok!
                     </Button>
                 </Right>
-            </EarnedCoinsContainer>
-        </EarnedCoinsModal>
+            </NotEnoughCoinsContainer>
+        </NotEnoughCoinsModal>
     )
 }
 
@@ -66,7 +66,7 @@ const Right = styled.div`
     width: 80%;
 `
 
-const EarnedCoinsContainer = styled.div`
+const NotEnoughCoinsContainer = styled.div`
     font-family: Helvetica;
     border: 3px solid #fff;
     border-radius: 8px;
@@ -83,7 +83,7 @@ const EarnedCoinsContainer = styled.div`
     }
 `
 
-const EarnedCoinsModal = styled.div`
+const NotEnoughCoinsModal = styled.div`
     position: fixed;
     z-index: 2;
     left: 0;
