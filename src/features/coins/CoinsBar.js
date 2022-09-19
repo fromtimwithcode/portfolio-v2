@@ -45,7 +45,11 @@ const SpendButton = styled.div`
     background-color: #fff;
     &:hover {
         cursor: pointer;
-        border: 1px solid #000;
+    }
+    @media (min-width: 501px) {
+        &:hover {
+            border: 1px solid #000;
+        }
     }
 `
 
