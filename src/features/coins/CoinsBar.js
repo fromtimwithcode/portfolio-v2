@@ -2,7 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 import coin from './../../images/coin.png'
 import { useSelector, useDispatch } from 'react-redux'
-import { showSpendInfo, showGameInfo } from './../popups/popupsSlice'
+import { showGameInfo } from './../popups/popupsSlice'
+import { HashLink } from 'react-router-hash-link'
 
 function CoinsBar() {
     const coins = useSelector((state) => state.coins.coins)
@@ -15,12 +16,19 @@ function CoinsBar() {
                     <Paragraph>{coins} coins</Paragraph>
                 </CoinInfo>
                 <Right>
-                    <SpendButton
-                        onClick={() => dispatch(showSpendInfo())}
-                        style={{ marginRight: '5px' }}
+                    <HashLink
+                        smooth
+                        to="#unlockable-content"
+                        style={{ textDecoration: 'none' }}
                     >
-                        spend
-                    </SpendButton>
+                        <SpendButton
+                            style={{
+                                marginRight: '5px',
+                            }}
+                        >
+                            spend
+                        </SpendButton>
+                    </HashLink>
                     <SpendButton onClick={() => dispatch(showGameInfo())}>
                         ?
                     </SpendButton>
@@ -45,7 +53,11 @@ const SpendButton = styled.div`
     background-color: #fff;
     &:hover {
         cursor: pointer;
-        border: 1px solid #000;
+    }
+    @media (min-width: 501px) {
+        &:hover {
+            border: 1px solid #000;
+        }
     }
 `
 

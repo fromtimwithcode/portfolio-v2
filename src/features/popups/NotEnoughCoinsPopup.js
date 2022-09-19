@@ -1,24 +1,25 @@
 import React from 'react'
 import styled from 'styled-components'
 import { useDispatch } from 'react-redux'
-import { showSpendInfo } from './popupsSlice'
+import { showNotEnoughCoinsInfo } from './popupsSlice'
+import coin_stack from './../../images/coin_stack.png'
 
-function SpendPopup() {
+function NotEnoughCoinsPopup() {
     const dispatch = useDispatch()
     return (
-        <EarnedCoinsModal>
-            <EarnedCoinsContainer>
-                <Top>
-                    <Header>Spend functionality coming soon!</Header>
-                </Top>
-                {/* <Middle></Middle> */}
-                <Bottom>
-                    <Button onClick={() => dispatch(showSpendInfo())}>
-                        awesome!
+        <NotEnoughCoinsModal>
+            <NotEnoughCoinsContainer>
+                <Left>
+                    <StyledCoinStack src={coin_stack} alt="coin stack" />
+                </Left>
+                <Right>
+                    <Header>You need more coins!</Header>
+                    <Button onClick={() => dispatch(showNotEnoughCoinsInfo())}>
+                        ok!
                     </Button>
-                </Bottom>
-            </EarnedCoinsContainer>
-        </EarnedCoinsModal>
+                </Right>
+            </NotEnoughCoinsContainer>
+        </NotEnoughCoinsModal>
     )
 }
 
@@ -26,7 +27,7 @@ const Button = styled.div`
     border: 2px solid #fff;
     border-radius: 3px;
     display: flex;
-    margin-top: 20px;
+    margin-top: 12px;
     padding: 3px 12px;
     display: flex;
     justify-content: center;
@@ -46,35 +47,30 @@ const Button = styled.div`
 const Header = styled.p`
     font-size: 1.6rem;
     margin: 0;
-    @media (max-width: 500px) {
-        font-size: 1.2rem;
-    }
 `
 
-const Top = styled.div`
-    display: flex;
-    justify-content: center;
+const StyledCoinStack = styled.img`
+    width: 100%;
 `
 
-// const Middle = styled.div`
-//     display: flex;
-//     justify-content: center;
-//     margin-top: 25px;
-//     font-size: 0.8rem;
-// `
-
-const Bottom = styled.div`
-    display: flex;
-    justify-content: center;
+const Left = styled.div`
+    width: 20%;
 `
 
-const EarnedCoinsContainer = styled.div`
-    font-family: Helvetica;
-    border: 3px solid #fff;
-    border-radius: 8px;
+const Right = styled.div`
     color: #fff;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+`
+
+const NotEnoughCoinsContainer = styled.div`
+    font-family: Helvetica;
+    border: 3px solid #fff;
+    border-radius: 8px;
+    display: flex;
     background-color: black;
     position: absolute;
     top: 50%;
@@ -87,7 +83,7 @@ const EarnedCoinsContainer = styled.div`
     }
 `
 
-const EarnedCoinsModal = styled.div`
+const NotEnoughCoinsModal = styled.div`
     position: fixed;
     z-index: 2;
     left: 0;
@@ -102,4 +98,4 @@ const EarnedCoinsModal = styled.div`
     overflow-x: hidden;
 `
 
-export default SpendPopup
+export default NotEnoughCoinsPopup

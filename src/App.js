@@ -4,6 +4,7 @@ import NavBar from './components/NavBar'
 import Hero from './components/Hero'
 import HowTo from './components/HowToUseSite'
 import Portfolio from './components/Portfolio'
+import UnlockableContent from './components/UnlockableContent'
 import Footer from './components/Footer'
 import CoinsBar from './features/coins/CoinsBar'
 import Popups from './components/Popups'
@@ -15,6 +16,7 @@ function App() {
             <Hero />
             <HowTo />
             <Portfolio />
+            <UnlockableContent />
             <Footer />
             <CoinsBar />
             <Popups />
