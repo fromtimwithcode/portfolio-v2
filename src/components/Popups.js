@@ -1,12 +1,16 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import EarnedCoinsPopup from '../features/popups/EarnedCoinsPopup'
+import NotEnoughCoinsPopup from '../features/popups/NotEnoughCoinsPopup'
 import SpendPopup from './../features/popups/SpendPopup'
 import InfoPopup from '../features/popups/InfoPopup'
 
 function Popups() {
     const showEarnedCoinsPopUp = useSelector(
         (state) => state.popups.earnedCoinsInfo
+    )
+    const showNotEnoughCoinsPopUp = useSelector(
+        (state) => state.popups.notEnoughCoinsInfo
     )
     const showSpendInfoPopUp = useSelector((state) => state.popups.spendInfo)
     const showGameInfoPopUp = useSelector((state) => state.popups.gameInfo)
@@ -15,6 +19,7 @@ function Popups() {
             {showEarnedCoinsPopUp && <EarnedCoinsPopup />}
             {showSpendInfoPopUp && <SpendPopup />}
             {showGameInfoPopUp && <InfoPopup />}
+            {showNotEnoughCoinsPopUp && <NotEnoughCoinsPopup />}
         </>
     )
 }

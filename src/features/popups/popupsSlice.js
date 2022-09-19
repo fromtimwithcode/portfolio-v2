@@ -2,6 +2,7 @@ import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
     earnedCoinsInfo: false,
+    notEnoughCoinsInfo: false,
     spendInfo: false,
     gameInfo: false,
 }
@@ -31,6 +32,15 @@ export const popupsSlice = createSlice({
                 handleModalClose()
             }
         },
+        showNotEnoughCoinsInfo: (state, action) => {
+            if (!state.notEnoughCoinsInfo) {
+                state.notEnoughCoinsInfo = true
+                handleModalOpen()
+            } else {
+                state.notEnoughCoinsInfo = false
+                handleModalClose()
+            }
+        },
         showSpendInfo: (state, action) => {
             if (!state.spendInfo) {
                 state.spendInfo = true
@@ -53,7 +63,11 @@ export const popupsSlice = createSlice({
 })
 
 // Action creators are generated for each case reducer function
-export const { showEarnedCoinsInfo, showSpendInfo, showGameInfo } =
-    popupsSlice.actions
+export const {
+    showEarnedCoinsInfo,
+    showNotEnoughCoinsInfo,
+    showSpendInfo,
+    showGameInfo,
+} = popupsSlice.actions
 
 export default popupsSlice.reducer
