@@ -1,46 +1,34 @@
-import React, { useState } from 'react'
+import React from 'react'
 import styled from 'styled-components'
-import github from './../images/github.png'
-import resume from './../images/resume.png'
-import phone from './../images/phone.png'
+import { useSelector, useDispatch } from 'react-redux'
+import { unlockItem } from '../features/unlockable_content/unlockableContentSlice'
 import lock from './../images/lock.png'
 import unlock from './../images/unlock.png'
 
 function UnlockableContent() {
-    //eslint-disable-next-line
-    const [unlockableItems, setUnlockableItems] = useState([
-        {
-            id: 1,
-            image: github,
-            alt: 'coin stack',
-            info: 'View repo',
-            unlocked: false,
-            cost: 5,
-        },
-        {
-            id: 2,
-            image: resume,
-            alt: 'coin stack',
-            info: 'View resume',
-            unlocked: false,
-            cost: 10,
-        },
-        {
-            id: 3,
-            image: phone,
-            alt: 'coin stack',
-            info: 'Call me',
-            unlocked: false,
-            cost: 50,
-        },
-    ])
+    const items = useSelector(
+        (state) => state.unlockableItems.unlockableItemsList
+    )
+    const coins = useSelector((state) => state.coins.coins)
+    const dispatch = useDispatch()
+    const handleUnlock = (id) => {
+        dispatch(unlockItem(id))
+    }
+    const notEnoughCoins = () => {}
     return (
         <Container>
             <UnlockableContentContainer>
                 <StyledLegend>Unlockable content</StyledLegend>
-                {unlockableItems.map((item, index) => {
+                {items.map((item, index) => {
                     return (
-                        <UnlockableContentItem key={index}>
+                        <UnlockableContentItem
+                            key={index}
+                            onClick={
+                                coins >= item.cost
+                                    ? () => handleUnlock(item.id)
+                                    : () => notEnoughCoins()
+                            }
+                        >
                             <LockContainer>
                                 <LockIcon
                                     src={item.unlocked ? unlock : lock}
