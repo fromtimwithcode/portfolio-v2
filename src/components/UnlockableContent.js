@@ -14,8 +14,14 @@ function UnlockableContent() {
     const coins = useSelector((state) => state.coins.coins)
     const dispatch = useDispatch()
     const handleUnlock = (id, cost) => {
-        dispatch(unlockItem(id))
-        dispatch(subtractCoins(cost))
+        if (items[id].unlocked) {
+            // TODO show unlocked item info
+        } else if (coins >= cost) {
+            dispatch(subtractCoins(cost))
+            dispatch(unlockItem(id))
+        } else {
+            dispatch(showNotEnoughCoinsInfo())
+        }
     }
     return (
         <Container id="unlockable-content">
@@ -25,11 +31,7 @@ function UnlockableContent() {
                     return (
                         <UnlockableContentItem
                             key={index}
-                            onClick={
-                                coins >= item.cost && item.unlocked === false
-                                    ? () => handleUnlock(item.id, item.cost)
-                                    : () => dispatch(showNotEnoughCoinsInfo())
-                            }
+                            onClick={() => handleUnlock(item.id, item.cost)}
                         >
                             <LockContainer>
                                 <LockIcon
