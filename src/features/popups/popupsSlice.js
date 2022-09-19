@@ -6,6 +6,18 @@ const initialState = {
     gameInfo: false,
 }
 
+const handleModalOpen = () => {
+    document.body.style.position = 'fixed'
+    document.body.style.top = `-${window.scrollY}px`
+}
+
+const handleModalClose = () => {
+    const scrollY = document.body.style.top
+    document.body.style.position = ''
+    document.body.style.top = ''
+    window.scrollTo(0, parseInt(scrollY || '0') * -1)
+}
+
 export const popupsSlice = createSlice({
     name: 'popups',
     initialState,
@@ -13,40 +25,28 @@ export const popupsSlice = createSlice({
         showEarnedCoinsInfo: (state, action) => {
             if (!state.earnedCoinsInfo) {
                 state.earnedCoinsInfo = true
-                document.body.style.position = 'fixed'
-                document.body.style.top = `-${window.scrollY}px`
+                handleModalOpen()
             } else {
                 state.earnedCoinsInfo = false
-                const scrollY = document.body.style.top
-                document.body.style.position = ''
-                document.body.style.top = ''
-                window.scrollTo(0, parseInt(scrollY || '0') * -1)
+                handleModalClose()
             }
         },
         showSpendInfo: (state, action) => {
             if (!state.spendInfo) {
                 state.spendInfo = true
-                document.body.style.position = 'fixed'
-                document.body.style.top = `-${window.scrollY}px`
+                handleModalOpen()
             } else {
                 state.spendInfo = false
-                const scrollY = document.body.style.top
-                document.body.style.position = ''
-                document.body.style.top = ''
-                window.scrollTo(0, parseInt(scrollY || '0') * -1)
+                handleModalClose()
             }
         },
         showGameInfo: (state, action) => {
             if (!state.gameInfo) {
                 state.gameInfo = true
-                document.body.style.position = 'fixed'
-                document.body.style.top = `-${window.scrollY}px`
+                handleModalOpen()
             } else {
                 state.gameInfo = false
-                const scrollY = document.body.style.top
-                document.body.style.position = ''
-                document.body.style.top = ''
-                window.scrollTo(0, parseInt(scrollY || '0') * -1)
+                handleModalClose()
             }
         },
     },
