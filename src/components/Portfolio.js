@@ -125,12 +125,15 @@ const Second = styled.div`
     align-items: center;
     font-size: 2rem;
     text-align: center;
+    @media (max-width: 500px) {
+        font-size: 1.6rem;
+    }
 `
 
 const Card = styled.a`
     box-sizing: border-box;
     position: relative;
-    width: 500px;
+    width: 50%;
     height: 200px;
     margin: 20px 60px;
     background: #000;
@@ -142,20 +145,22 @@ const Card = styled.a`
     border: 3px solid #fff;
     border-radius: 3px;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    @media (max-width: 1450px) {
-        width: 400px;
-    }
-    @media (max-width: 1060px) {
-        margin: 20px 30px;
-    }
-    @media (max-width: 500px) {
-        margin: 5px 20px;
-        width: 370px;
-        height: 150px;
+    @media (max-width: 768px) {
+        width: 80%;
     }
     &:hover {
         cursor: pointer;
         border: 3px solid #bb86fc;
+    }
+    @media (max-width: 500px) {
+        width: 100%;
+        margin: 5px 20px;
+        margin-bottom: 20px;
+        width: 100%;
+        height: 150px;
+        &:hover {
+            border: 3px solid #fff;
+        }
     }
 `
 
