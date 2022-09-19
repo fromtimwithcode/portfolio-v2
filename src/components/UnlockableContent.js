@@ -38,9 +38,9 @@ function UnlockableContent() {
         <Container>
             <UnlockableContentContainer>
                 <StyledLegend>Unlockable content</StyledLegend>
-                {unlockableItems.map((item) => {
+                {unlockableItems.map((item, index) => {
                     return (
-                        <UnlockableContentItem>
+                        <UnlockableContentItem key={index}>
                             <LockContainer>
                                 <LockIcon
                                     src={item.unlocked ? unlock : lock}
