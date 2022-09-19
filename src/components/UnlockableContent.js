@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { useSelector, useDispatch } from 'react-redux'
 import { unlockItem } from '../features/unlockable_content/unlockableContentSlice'
+import { subtractCoins } from '../features/coins/coinsSlice'
 import lock from './../images/lock.png'
 import unlock from './../images/unlock.png'
 
@@ -11,8 +12,9 @@ function UnlockableContent() {
     )
     const coins = useSelector((state) => state.coins.coins)
     const dispatch = useDispatch()
-    const handleUnlock = (id) => {
+    const handleUnlock = (id, cost) => {
         dispatch(unlockItem(id))
+        dispatch(subtractCoins(cost))
     }
     const notEnoughCoins = () => {}
     return (
@@ -25,7 +27,7 @@ function UnlockableContent() {
                             key={index}
                             onClick={
                                 coins >= item.cost
-                                    ? () => handleUnlock(item.id)
+                                    ? () => handleUnlock(item.id, item.cost)
                                     : () => notEnoughCoins()
                             }
                         >
