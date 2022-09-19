@@ -2,6 +2,7 @@ import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
     earnedCoinsInfo: false,
+    spendInfo: false,
     gameInfo: false,
 }
 
@@ -16,6 +17,19 @@ export const popupsSlice = createSlice({
                 document.body.style.top = `-${window.scrollY}px`
             } else {
                 state.earnedCoinsInfo = false
+                const scrollY = document.body.style.top
+                document.body.style.position = ''
+                document.body.style.top = ''
+                window.scrollTo(0, parseInt(scrollY || '0') * -1)
+            }
+        },
+        showSpendInfo: (state, action) => {
+            if (!state.spendInfo) {
+                state.spendInfo = true
+                document.body.style.position = 'fixed'
+                document.body.style.top = `-${window.scrollY}px`
+            } else {
+                state.spendInfo = false
                 const scrollY = document.body.style.top
                 document.body.style.position = ''
                 document.body.style.top = ''
@@ -39,6 +53,7 @@ export const popupsSlice = createSlice({
 })
 
 // Action creators are generated for each case reducer function
-export const { showEarnedCoinsInfo, showGameInfo } = popupsSlice.actions
+export const { showEarnedCoinsInfo, showSpendInfo, showGameInfo } =
+    popupsSlice.actions
 
 export default popupsSlice.reducer

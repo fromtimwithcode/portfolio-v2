@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import coin from './../../images/coin.png'
 import { useSelector, useDispatch } from 'react-redux'
-import { showGameInfo } from './../popups/popupsSlice'
+import { showSpendInfo, showGameInfo } from './../popups/popupsSlice'
 
 function CoinsBar() {
     const coins = useSelector((state) => state.coins.coins)
@@ -15,7 +15,10 @@ function CoinsBar() {
                     <Paragraph>{coins} coins</Paragraph>
                 </CoinInfo>
                 <Right>
-                    <SpendButton style={{ marginRight: '5px' }}>
+                    <SpendButton
+                        onClick={() => dispatch(showSpendInfo())}
+                        style={{ marginRight: '5px' }}
+                    >
                         spend
                     </SpendButton>
                     <SpendButton onClick={() => dispatch(showGameInfo())}>
