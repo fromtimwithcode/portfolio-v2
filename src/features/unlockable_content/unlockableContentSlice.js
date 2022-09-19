@@ -8,28 +8,34 @@ const initialState = {
         {
             id: 0,
             image: github,
-            alt: 'coin stack',
+            alt: 'github',
             info: 'View repo',
+            url: 'https://github.com/fromtimwithcode/portfolio-v2',
+            unlockText: `You've unlocked this website's Github repo.`,
             unlocked: false,
             cost: 5,
         },
         {
             id: 1,
             image: resume,
-            alt: 'coin stack',
+            alt: 'resume',
             info: 'View resume',
+            url: 'https://docs.google.com/document/d/1mjjZFdtvZRNZ4BPqsWNDAQJrMkHTREKJKaEXOXqtClY/edit',
+            unlockText: `You've unlocked my resume.`,
             unlocked: false,
             cost: 10,
         },
         {
             id: 2,
             image: phone,
-            alt: 'coin stack',
+            alt: 'phone',
             info: 'Call me',
+            unlockText: `You've unlocked my phone number: 414-775-4333.`,
             unlocked: false,
             cost: 35,
         },
     ],
+    currentlyUnlocked: {},
 }
 
 export const unlockableItemsSlice = createSlice({
@@ -37,7 +43,9 @@ export const unlockableItemsSlice = createSlice({
     initialState,
     reducers: {
         unlockItem: (state, action) => {
-            state.unlockableItemsList[action.payload].unlocked = true
+            let id = action.payload
+            state.unlockableItemsList[id].unlocked = true
+            state.currentlyUnlocked = state.unlockableItemsList[id]
         },
     },
 })

@@ -3,7 +3,10 @@ import styled from 'styled-components'
 import { useSelector, useDispatch } from 'react-redux'
 import { unlockItem } from '../features/unlockable_content/unlockableContentSlice'
 import { subtractCoins } from '../features/coins/coinsSlice'
-import { showNotEnoughCoinsInfo } from '../features/popups/popupsSlice'
+import {
+    showUnlockableInfo,
+    showNotEnoughCoinsInfo,
+} from '../features/popups/popupsSlice'
 import lock from './../images/lock.png'
 import unlock from './../images/unlock.png'
 
@@ -15,10 +18,11 @@ function UnlockableContent() {
     const dispatch = useDispatch()
     const handleUnlock = (id, cost) => {
         if (items[id].unlocked) {
-            // TODO show unlocked item info
+            dispatch(showUnlockableInfo())
         } else if (coins >= cost) {
             dispatch(subtractCoins(cost))
             dispatch(unlockItem(id))
+            dispatch(showUnlockableInfo())
         } else {
             dispatch(showNotEnoughCoinsInfo())
         }

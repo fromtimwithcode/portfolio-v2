@@ -4,6 +4,7 @@ const initialState = {
     earnedCoinsInfo: false,
     notEnoughCoinsInfo: false,
     gameInfo: false,
+    unlockableInfo: false,
 }
 
 const handleModalOpen = () => {
@@ -49,11 +50,24 @@ export const popupsSlice = createSlice({
                 handleModalClose()
             }
         },
+        showUnlockableInfo: (state, action) => {
+            if (!state.unlockableInfo) {
+                state.unlockableInfo = true
+                handleModalOpen()
+            } else {
+                state.unlockableInfo = false
+                handleModalClose()
+            }
+        },
     },
 })
 
 // Action creators are generated for each case reducer function
-export const { showEarnedCoinsInfo, showNotEnoughCoinsInfo, showGameInfo } =
-    popupsSlice.actions
+export const {
+    showEarnedCoinsInfo,
+    showNotEnoughCoinsInfo,
+    showGameInfo,
+    showUnlockableInfo,
+} = popupsSlice.actions
 
 export default popupsSlice.reducer
