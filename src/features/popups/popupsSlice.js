@@ -62,7 +62,6 @@ export const popupsSlice = createSlice({
     },
 })
 
-// Action creators are generated for each case reducer function
 export const {
     showEarnedCoinsInfo,
     showNotEnoughCoinsInfo,

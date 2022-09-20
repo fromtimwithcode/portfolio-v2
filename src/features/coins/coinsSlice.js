@@ -19,7 +19,6 @@ export const coinsSlice = createSlice({
     },
 })
 
-// Action creators are generated for each case reducer function
 export const { addCoins, subtractCoins } = coinsSlice.actions
 
 export default coinsSlice.reducer

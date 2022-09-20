@@ -50,7 +50,6 @@ export const unlockableItemsSlice = createSlice({
     },
 })
 
-// Action creators are generated for each case reducer function
 export const { unlockItem } = unlockableItemsSlice.actions
 
 export default unlockableItemsSlice.reducer
