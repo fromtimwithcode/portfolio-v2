@@ -13,31 +13,31 @@ function Portfolio() {
     const dispatch = useDispatch()
     const [projects, setProjects] = useState([
         {
-            id: 1,
+            id: 0,
             url: 'https://projectindigonft.com',
             image: project_indigo,
             info: 'An NFT experience with two game modes',
             earned: false,
         },
         {
-            id: 2,
-            url: 'http://bloxfit.com',
-            image: bloxfit,
-            info: 'A social platform with fitness classes',
-            earned: false,
-        },
-        {
-            id: 3,
+            id: 1,
             url: 'http://templetrippers.io',
             image: temple_trippers,
             info: 'A customizable NFT experience',
             earned: false,
         },
         {
-            id: 4,
+            id: 2,
             url: 'http://traintolevelup.com',
             image: train_to_level_up,
             info: 'A fitness web app with learning management',
+            earned: false,
+        },
+        {
+            id: 3,
+            url: 'http://bloxfit.com',
+            image: bloxfit,
+            info: 'A social platform with fitness classes',
             earned: false,
         },
     ])
