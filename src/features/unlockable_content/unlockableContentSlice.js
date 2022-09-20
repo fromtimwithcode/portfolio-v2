@@ -11,7 +11,7 @@ const initialState = {
             alt: 'github',
             info: 'View repo',
             url: 'https://github.com/fromtimwithcode/portfolio-v2',
-            unlockText: `You've unlocked this website's Github repo.`,
+            unlockText: `You've unlocked my Github repo.`,
             unlocked: false,
             cost: 5,
         },
@@ -50,7 +50,6 @@ export const unlockableItemsSlice = createSlice({
     },
 })
 
-// Action creators are generated for each case reducer function
 export const { unlockItem } = unlockableItemsSlice.actions
 
 export default unlockableItemsSlice.reducer
