@@ -8,19 +8,19 @@ function NavBar() {
     const dispatch = useDispatch()
     const [links, setLinks] = useState([
         {
-            id: 1,
+            id: 0,
             display: 'github',
             url: 'https://github.com/fromtimwithcode',
             earned: false,
         },
         {
-            id: 2,
+            id: 1,
             display: 'twitter',
             url: 'https://twitter.com/timbo_btc',
             earned: false,
         },
         {
-            id: 3,
+            id: 2,
             display: 'linkedin',
             url: 'https://linkedin.com/in/fromtimwithcode',
             earned: false,
