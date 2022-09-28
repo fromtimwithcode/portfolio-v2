@@ -4,7 +4,8 @@ import styled from 'styled-components'
 function Hero() {
     return (
         <Header>
-            I build <Purple>beautiful</Purple> experiences all over the web
+            I build <Purple>beautiful</Purple> experiences all over{' '}
+            <nobr>the web</nobr>
         </Header>
     )
 }
