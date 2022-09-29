@@ -70,7 +70,9 @@ function Portfolio() {
                                 backgroundImage: `url(${project.image})`,
                             }}
                         ></First>
-                        <Second>{project.info}</Second>
+                        <Second>
+                            <StyledTitle>{project.info}</StyledTitle>
+                        </Second>
                         {project.earned ? null : (
                             <EarnInfo>
                                 <StyledCoin src={coin} alt="coin" />
@@ -83,6 +85,10 @@ function Portfolio() {
         </Container>
     )
 }
+
+const StyledTitle = styled.p`
+    padding: 0 20px;
+`
 
 const EarnInfoText = styled.p`
     margin: 0;
