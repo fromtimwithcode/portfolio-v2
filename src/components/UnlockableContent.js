@@ -131,12 +131,9 @@ const UnlockableContentContainer = styled.fieldset`
     justify-content: space-evenly;
     align-items: center;
     background-color: black;
-    width: 50%;
+    width: 65%;
     height: 200px;
     margin: 20px 60px;
-    @media (max-width: 768px) {
-        width: 80%;
-    }
     @media (max-width: 500px) {
         font-size: 0.8rem;
         margin: 5px 20px;

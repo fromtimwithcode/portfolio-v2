@@ -139,7 +139,7 @@ const Second = styled.div`
 const Card = styled.a`
     box-sizing: border-box;
     position: relative;
-    width: 50%;
+    width: 65%;
     height: 200px;
     margin: 20px 60px;
     background: #000;
@@ -151,9 +151,6 @@ const Card = styled.a`
     border: 3px solid #fff;
     border-radius: 3px;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    @media (max-width: 768px) {
-        width: 80%;
-    }
     &:hover {
         cursor: pointer;
         border: 3px solid #bb86fc;

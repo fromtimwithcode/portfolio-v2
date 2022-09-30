@@ -74,13 +74,10 @@ const EarnedCoinsContainer = styled.fieldset`
     color: #fff;
     display: flex;
     background-color: black;
-    width: 50%;
+    width: 65%;
     height: 200px;
     margin: 20px 60px;
     margin-top: 0;
-    @media (max-width: 768px) {
-        width: 80%;
-    }
     @media (max-width: 500px) {
         font-size: 0.8rem;
         margin: 5px 20px;
