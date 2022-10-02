@@ -106,7 +106,7 @@ const EarnInfoText = styled.p`
 `
 
 const StyledCoin = styled.img`
-    width: 16px;
+    width: 20px;
     margin-right: 3px;
     margin-bottom: 0.6px;
 `
