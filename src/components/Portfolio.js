@@ -73,12 +73,20 @@ function Portfolio() {
                         <Second>
                             <StyledTitle>{project.info}</StyledTitle>
                         </Second>
-                        {project.earned ? null : (
-                            <EarnInfo>
-                                <StyledCoin src={coin} alt="coin" />
-                                <EarnInfoText>5</EarnInfoText>
-                            </EarnInfo>
-                        )}
+                        <EarnInfo>
+                            {project.earned ? (
+                                <EarnInfoText>
+                                    🥳 Already earned 5 coins
+                                </EarnInfoText>
+                            ) : (
+                                <>
+                                    <StyledCoin src={coin} alt="coin" />
+                                    <EarnInfoText>
+                                        Earn 5 coins by visiting
+                                    </EarnInfoText>
+                                </>
+                            )}
+                        </EarnInfo>
                     </Card>
                 )
             })}
@@ -91,6 +99,7 @@ const StyledTitle = styled.p`
 `
 
 const EarnInfoText = styled.p`
+    font-family: 'Bebas Neue', cursive;
     margin: 0;
     font-size: 16px;
     margin-top: 1px;
@@ -99,7 +108,7 @@ const EarnInfoText = styled.p`
 const StyledCoin = styled.img`
     width: 16px;
     margin-right: 3px;
-    margin-top: 0.5px;
+    margin-bottom: 0.6px;
 `
 
 const EarnInfo = styled.div`
