@@ -18,7 +18,7 @@ function NavBar() {
         {
             id: 1,
             display: 'twitter',
-            url: 'https://twitter.com/timbo_btc',
+            url: 'https://twitter.com/fromtimwithcode',
             earned: false,
         },
         {
