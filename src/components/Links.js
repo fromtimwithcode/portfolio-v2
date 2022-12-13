@@ -10,6 +10,12 @@ function Links() {
             <StyledLink href="https://bloxfit.com" target="_blank">
                 <Button>BLOXFIT</Button>
             </StyledLink>
+            <StyledLink
+                href="https://storytime.fromtimwithcode.com"
+                target="_blank"
+            >
+                <Button>AI STORY GENERATOR</Button>
+            </StyledLink>
             <StyledLink href="https://projectindigonft.com" target="_blank">
                 <Button>PROJECT INDIGO</Button>
             </StyledLink>
