@@ -37,6 +37,12 @@ function Links() {
             >
                 <Button>HACKERRANK</Button>
             </StyledLink>
+            <StyledLink
+                href="https://www.buymeacoffee.com/fromtimwithcode"
+                target="_blank"
+            >
+                <Button>BUY ME A COFFEE</Button>
+            </StyledLink>
         </Container>
     )
 }
