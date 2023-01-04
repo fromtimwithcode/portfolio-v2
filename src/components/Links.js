@@ -16,6 +16,12 @@ function Links() {
             >
                 <Button>AI STORY GENERATOR</Button>
             </StyledLink>
+            <StyledLink
+                href="https://affirmations.fromtimwithcode.com"
+                target="_blank"
+            >
+                <Button>AI AFFIRMATION ORACLE</Button>
+            </StyledLink>
             <StyledLink href="https://projectindigonft.com" target="_blank">
                 <Button>PROJECT INDIGO</Button>
             </StyledLink>
