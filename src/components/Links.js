@@ -5,43 +5,13 @@ function Links() {
     return (
         <Container>
             <StyledLink href="https://fromtimwithcode.com" target="_blank">
-                <Button>PERSONAL WEBSITE</Button>
+                <Button>FROMTIMWITHCODE.COM</Button>
             </StyledLink>
             <StyledLink href="https://bloxfit.com" target="_blank">
-                <Button>BLOXFIT</Button>
+                <Button>BLOXFIT.COM</Button>
             </StyledLink>
-            <StyledLink
-                href="https://storytime.fromtimwithcode.com"
-                target="_blank"
-            >
-                <Button>AI STORY GENERATOR</Button>
-            </StyledLink>
-            <StyledLink
-                href="https://affirmations.fromtimwithcode.com"
-                target="_blank"
-            >
-                <Button>AI AFFIRMATION ORACLE</Button>
-            </StyledLink>
-            <StyledLink href="https://projectindigonft.com" target="_blank">
-                <Button>PROJECT INDIGO</Button>
-            </StyledLink>
-            <StyledLink
-                href="https://twitter.com/fromtimwithcode"
-                target="_blank"
-            >
-                <Button>TWITTER</Button>
-            </StyledLink>
-            <StyledLink
-                href="https://github.com/fromtimwithcode"
-                target="_blank"
-            >
-                <Button>GITHUB</Button>
-            </StyledLink>
-            <StyledLink
-                href="https://www.hackerrank.com/tmarchant"
-                target="_blank"
-            >
-                <Button>HACKERRANK</Button>
+            <StyledLink href="https://devshop.ai" target="_blank">
+                <Button>DEVSHOP.AI</Button>
             </StyledLink>
             <StyledLink
                 href="https://www.buymeacoffee.com/fromtimwithcode"
