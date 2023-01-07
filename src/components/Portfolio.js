@@ -5,6 +5,7 @@ import bloxfit from './../images/bloxfit.jpg'
 import temple_trippers from './../images/temple_trippers.png'
 import train_to_level_up from './../images/train_to_level_up.png'
 import storytime from './../images/storytime.jpg'
+import affirmations from './../images/affirmations.jpg'
 import { useDispatch } from 'react-redux'
 import { addCoins } from '../features/coins/coinsSlice'
 import { showEarnedCoinsInfo } from '../features/popups/popupsSlice'
@@ -22,27 +23,34 @@ function Portfolio() {
         },
         {
             id: 1,
+            url: 'https://affirmations.fromtimwithcode.com',
+            image: affirmations,
+            info: `An AI-powered affirmation oracle`,
+            earned: false,
+        },
+        {
+            id: 2,
             url: 'https://projectindigonft.com',
             image: project_indigo,
             info: 'An NFT experience with two game modes',
             earned: false,
         },
         {
-            id: 2,
+            id: 3,
             url: 'http://templetrippers.io',
             image: temple_trippers,
             info: 'A customizable NFT experience',
             earned: false,
         },
         {
-            id: 3,
+            id: 4,
             url: 'http://bloxfit.com',
             image: bloxfit,
             info: 'A fitness on demand platform with rewards',
             earned: false,
         },
         {
-            id: 4,
+            id: 5,
             url: 'http://traintolevelup.com',
             image: train_to_level_up,
             info: 'A fitness web app with learning management',
