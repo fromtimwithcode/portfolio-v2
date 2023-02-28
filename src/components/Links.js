@@ -4,11 +4,14 @@ import styled from 'styled-components'
 function Links() {
     return (
         <Container>
-            <StyledLink href="https://fromtimwithcode.com" target="_blank">
+            {/* <StyledLink href="https://fromtimwithcode.com" target="_blank">
                 <Button>FROMTIMWITHCODE.COM</Button>
-            </StyledLink>
+            </StyledLink> */}
             <StyledLink href="https://bloxfit.com" target="_blank">
-                <Button>BLOXFIT.COM</Button>
+                <Button>BLOXFIT</Button>
+            </StyledLink>
+            <StyledLink href="https://projectindigonft.com" target="_blank">
+                <Button>PROJECT INDIGO</Button>
             </StyledLink>
             <StyledLink href="https://devshop.ai" target="_blank">
                 <Button>DEVSHOP.AI</Button>
