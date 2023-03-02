@@ -13,6 +13,9 @@ function Links() {
             <StyledLink href="https://projectindigonft.com" target="_blank">
                 <Button>PROJECT INDIGO</Button>
             </StyledLink>
+            <StyledLink href="https://templetrippers.io" target="_blank">
+                <Button>TEMPLE TRIPPERS</Button>
+            </StyledLink>
             <StyledLink href="https://devshop.ai" target="_blank">
                 <Button>DEVSHOP.AI</Button>
             </StyledLink>
